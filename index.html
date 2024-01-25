@@ -1,12 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HRM 8th Batch PDFs</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap">
     <link rel="icon" href="pdf.png">
+    <style>
+        fonts {
+            font-family: 'Cinzel', sans-serif;
+        }
+
+        /* Add this style for the underline effect */
+        #booksFeatureButton {
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 15px;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        #booksFeatureButton.underline::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: white;
+            margin-top: 2px;
+        }
+
+        .download-btn {
+            cursor: pointer;
+        }
+    </style>
 </head>
+
 <body class="bg-gray-200 dark:bg-black text-gray-800 dark:text-white">
 
     <div class="container mx-auto p-4">
@@ -14,7 +47,7 @@
         <!-- Header with Logo -->
         <div class="flex items-center justify-between mb-8">
             <img src="pdf.png" alt="Your Logo" class="h-12">
-            <h1 class="text-2xl text-green-600 font-semibold">HRM 8th Batch</h1>
+            <h1 class="text-2xl fonts text-green-600 font-semibold">HRM 8th Batch</h1>
             <div id="darkModeToggle" class="cursor-pointer">
                 <!-- You can replace the icons with your desired images -->
                 <img id="lightModeIcon" src="light.png" alt="Light Mode" class="h-8">
@@ -22,11 +55,16 @@
             </div>
         </div>
 
-        <!-- Cards Section -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
-            <!-- Repeat the following card block for each PDF -->
+        <!-- Books Feature (Button) -->
+        <button id="booksFeatureButton" class="cursor-pointer">
+            Books
+        </button>
+
+        <!-- Cards Section (Hidden by default) -->
+        <div id="cardsSection" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 hidden">
             <!-- Card 1 -->
             <div class="bg-white dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg">
+                <!-- Card content goes here -->
                 <img src="hrm.png" alt="PDF Preview" class="w-full h-40 object-cover">
                 <div class="p-4 flex flex-col justify-center items-center">
                     <h2 class="text-lg font-semibold mb-2 dark:text-black">Human Resources Management</h2>
@@ -35,7 +73,10 @@
                     <button class="bg-green-500 text-black py-2 px-4 rounded-full download-btn" data-pdf-link="https://drive.google.com/file/d/1KvfPGIshsy_iR7d9dMFUqsQAdeD5nooT/view?usp=sharing">Download</button>
                 </div>
             </div>
+
+            <!-- Card 2 -->
             <div class="bg-white dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg">
+                <!-- Card content goes here -->
                 <img src="finance.png" alt="PDF Preview" class="w-full h-40 object-cover">
                 <div class="p-4 flex flex-col justify-center items-center">
                     <h2 class="text-lg font-semibold mb-2 dark:text-black">Principal of Managerial Finance</h2>
@@ -44,7 +85,10 @@
                     <button class="bg-green-500 text-black py-2 px-4 rounded-full download-btn" data-pdf-link="https://drive.google.com/file/d/1y2Msxif90GTfSti5_D_ittuLnTzB7dIt/view?usp=sharing">Download</button>
                 </div>
             </div>
+
+            <!-- Card 3 -->
             <div class="bg-white dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg">
+                <!-- Card content goes here -->
                 <img src="macro.png" alt="PDF Preview" class="w-full h-40 object-cover">
                 <div class="p-4 flex flex-col justify-center items-center">
                     <h2 class="text-lg font-semibold mb-2 dark:text-black">Macroeconomics</h2>
@@ -53,7 +97,10 @@
                     <button class="bg-green-500 text-black py-2 px-4 rounded-full download-btn" data-pdf-link="https://drive.google.com/file/d/1j-KEfM4AcPho2XMRd4HlrHhYaWlCiNoO/view?usp=sharing">Download</button>
                 </div>
             </div>
+
+            <!-- Card 4 -->
             <div class="bg-white dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg">
+                <!-- Card content goes here -->
                 <img src="ethics.png" alt="PDF Preview" class="w-full h-40 object-cover">
                 <div class="p-4 flex flex-col justify-center items-center">
                     <h2 class="text-lg font-semibold mb-2 dark:text-black">Business Ethics</h2>
@@ -62,7 +109,10 @@
                     <button class="bg-green-500 text-black py-2 px-4 rounded-full download-btn" data-pdf-link="https://drive.google.com/file/d/1OzdylIsBJcREVvCnKIA1NiMuflfTaSlU/view?usp=sharing">Download</button>
                 </div>
             </div>
+
+            <!-- Card 5 -->
             <div class="bg-white dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg">
+                <!-- Card content goes here -->
                 <img src="entrpreneur.png" alt="PDF Preview" class="w-full h-40 object-cover">
                 <div class="p-4 flex flex-col justify-center items-center">
                     <h2 class="text-lg font-semibold mb-2 dark:text-black">Entrepreneurship</h2>
@@ -71,7 +121,10 @@
                     <button class="bg-green-500 text-black py-2 px-4 rounded-full download-btn" data-pdf-link="https://drive.google.com/file/d/1xRwRXf9tGtNuMXdur7JyCC5pPxTcW7fc/view?usp=sharing">Download</button>
                 </div>
             </div>
+
+            <!-- Card 6 -->
             <div class="bg-white dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg">
+                <!-- Card content goes here -->
                 <img src="hrm.png" alt="PDF Preview" class="w-full h-40 object-cover">
                 <div class="p-4 flex flex-col justify-center items-center">
                     <h2 class="text-lg font-semibold mb-2 dark:text-black">Human Resources Management</h2>
@@ -80,28 +133,6 @@
                     <button class="bg-green-500 text-black py-2 px-4 rounded-full download-btn" data-pdf-link="https://drive.google.com/file/d/1KvfPGIshsy_iR7d9dMFUqsQAdeD5nooT/view?usp=sharing">Download</button>
                 </div>
             </div>
-            <div class="bg-white dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg">
-                <img src="hrm.png" alt="PDF Preview" class="w-full h-40 object-cover">
-                <div class="p-4 flex flex-col justify-center items-center">
-                    <h2 class="text-lg font-semibold mb-2 dark:text-black">Human Resources Management</h2>
-                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Dessler, Gary</p>
-                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Year : 2020</p>
-                    <button class="bg-green-500 text-black py-2 px-4 rounded-full download-btn" data-pdf-link="https://drive.google.com/file/d/1KvfPGIshsy_iR7d9dMFUqsQAdeD5nooT/view?usp=sharing">Download</button>
-                </div>
-            </div>
-            <div class="bg-white dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg">
-                <img src="hrm.png" alt="PDF Preview" class="w-full h-40 object-cover">
-                <div class="p-4 flex flex-col justify-center items-center">
-                    <h2 class="text-lg font-semibold mb-2 dark:text-black">Human Resources Management</h2>
-                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Dessler, Gary</p>
-                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Year : 2020</p>
-                    <button class="bg-green-500 text-black py-2 px-4 rounded-full download-btn" data-pdf-link="https://drive.google.com/file/d/1KvfPGIshsy_iR7d9dMFUqsQAdeD5nooT/view?usp=sharing">Download</button>
-                </div>
-            </div>
-            
-            <!-- Repeat the above card block for each PDF, total 10 times -->
-            <!-- Card 2 -->
-            <!-- ... (repeat the pattern for the remaining 9 cards) -->
         </div>
 
     </div>
@@ -109,4 +140,5 @@
     <script src="script.js"></script>
 
 </body>
+
 </html>

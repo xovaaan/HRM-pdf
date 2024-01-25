@@ -1,13 +1,20 @@
-// script.js
-
 document.addEventListener('DOMContentLoaded', function () {
     const darkModeToggle = document.getElementById('darkModeToggle');
     const body = document.body;
+    const booksButton = document.getElementById('booksFeatureButton');
+    const cardsSection = document.getElementById('cardsSection');
 
     darkModeToggle.addEventListener('click', () => {
         body.classList.toggle('dark');
         updateDarkModeIcon();
         updateBodyStyles();
+        updateBooksFeatureStyle();
+    });
+
+    booksButton.addEventListener('click', () => {
+        booksButton.classList.toggle('active');
+        cardsSection.classList.toggle('hidden');
+        updateBooksFeatureStyle();
     });
 
     // Function to update the dark mode icon
@@ -30,8 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function updateBodyStyles() {
         if (body.classList.contains('dark')) {
             // Dark mode is active
-            body.style.backgroundColor = 'black';
-            
+            body.style.backgroundColor = '#191919';
         } else {
             // Light mode is active
             body.style.backgroundColor = ''; // Reset to default
@@ -39,9 +45,23 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    // Function to update the style of the Books button based on dark mode and click state
+    function updateBooksFeatureStyle() {
+        if (body.classList.contains('dark')) {
+            // Dark mode is active
+            booksButton.style.color = 'white';
+            booksButton.style.backgroundColor = cardsSection.classList.contains('hidden') ? 'black' : 'green';
+        } else {
+            // Light mode is active
+            booksButton.style.color = ''; // Reset to default
+            booksButton.style.backgroundColor = cardsSection.classList.contains('hidden') ? 'black' : 'green';
+        }
+    }
+
     // Initial setup
     updateDarkModeIcon();
     updateBodyStyles();
+    updateBooksFeatureStyle();
 
     // Download PDF functionality
     const downloadButtons = document.querySelectorAll('.download-btn');
@@ -58,4 +78,3 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
-
