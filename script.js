@@ -23,15 +23,15 @@ document.addEventListener('DOMContentLoaded', () => {
     toggleIcons();
 
     booksFeatureButton.addEventListener('click', () => {
-        booksFeatureButton.classList.add('active', 'underline');
-        notesFeatureButton.classList.remove('active', 'underline');
+        booksFeatureButton.classList.add('active', );
+        notesFeatureButton.classList.remove('active');
         booksCardsSection.classList.remove('hidden');
         notesCardsSection.classList.add('hidden');
     });
 
     notesFeatureButton.addEventListener('click', () => {
-        booksFeatureButton.classList.remove('active', 'underline');
-        notesFeatureButton.classList.add('active', 'underline');
+        booksFeatureButton.classList.remove('active', );
+        notesFeatureButton.classList.add('active' );
         booksCardsSection.classList.add('hidden');
         notesCardsSection.classList.remove('hidden');
     });
