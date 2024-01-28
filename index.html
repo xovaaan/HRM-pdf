@@ -15,18 +15,8 @@
         }
 
         /* Add this style for the underline effect */
-        #booksFeatureButton {
-            background-color: black;
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 15px;
-            margin-bottom: 15px;
-            font-size: 1.2rem;
-            cursor: pointer;
-        }
-
-        #booksFeatureButton.underline::after {
+        #booksFeatureButton.underline::after,
+        #notesFeatureButton.underline::after {
             content: '';
             display: block;
             width: 100%;
@@ -38,10 +28,59 @@
         .download-btn {
             cursor: pointer;
         }
+
+        /* Add this style for the button toggle effect */
+        .button-toggle {
+            position: relative;
+            transition: background-color 0.4s ease, color 0.4s ease;
+        }
+
+        .button-toggle:hover {
+            background-color: #f1f1f1;
+        }
+
+        .button-toggle.active {
+            background-color: black;
+            color: white;
+        }
+
+        .button-toggle.active::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 100%;
+            width: 100%;
+            height: 2px;
+            background-color: white;
+        }
+
+        /* Add this style for dark mode */
+        body.dark {
+            background-color: black;
+            color: white;
+        }
+
+        body.dark .button-toggle:hover {
+            background-color: #1a1a1a;
+        }
+
+        body.dark .button-toggle.active {
+            background-color: green; /* Adjust the color as needed */
+        }
+
+        #booksFeatureButton{
+            padding: 10px 12px;
+            border-radius: 10px;
+        }
+        #notesFeatureButton
+        {
+            padding: 10px 12px;
+            border-radius: 10px;
+        }
     </style>
 </head>
 
-<body class="bg-gray-200 dark:bg-black text-gray-800 dark:text-white">
+<body class="bg-gray-200 text-gray-800 dark:text-white">
 
     <div class="container mx-auto p-4">
 
@@ -52,26 +91,30 @@
             <div id="darkModeToggle" class="cursor-pointer">
                 <!-- You can replace the icons with your desired images -->
                 <img id="lightModeIcon" src="light.png" alt="Light Mode" class="h-8">
-                <img id="darkModeIcon" src="dark-mode.png" alt="Dark Mode" class="h-8">
+                <img id="darkModeIcon" src="dark-mode.png" alt="Dark Mode" class="h-8 hidden">
             </div>
         </div>
 
-        <!-- Books Feature (Button) -->
-        <button id="booksFeatureButton" class="cursor-pointer">
+        <!-- Books and Notes Feature (Buttons) -->
+        <button id="booksFeatureButton" class="button-toggle underline cursor-pointer mr-4 mb-5  ">
             Books
+        </button>
+        <button id="notesFeatureButton" class="button-toggle underline cursor-pointer mr-4 mb-5">
+            Notes
         </button>
 
         <!-- Cards Section (Hidden by default) -->
-        <div id="cardsSection" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 hidden">
-            <!-- Card 1 -->
-            <div class="bg-white dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg">
+        <div id="booksCardsSection" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 hidden">
+            <!-- Card 1 --> <div class="bg-white dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg">
                 <!-- Card content goes here -->
                 <img src="hrm.png" alt="PDF Preview" class="w-full h-40 object-cover">
                 <div class="p-4 flex flex-col justify-center items-center">
                     <h2 class="text-lg font-semibold mb-2 dark:text-black">Human Resources Management</h2>
                     <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Dessler, Gary</p>
                     <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Year : 2020</p>
-                    <button class="bg-green-500 text-black py-2 px-4 rounded-full download-btn" data-pdf-link="https://drive.google.com/file/d/1KvfPGIshsy_iR7d9dMFUqsQAdeD5nooT/view?usp=sharing">Download</button>
+                    <button class="bg-green-500 text-black py-2 px-4 rounded-full download-btn"
+                        data-pdf-link="https://drive.google.com/file/d/1KvfPGIshsy_iR7d9dMFUqsQAdeD5nooT/view?usp=sharing">Download
+                    </button>
                 </div>
             </div>
 
@@ -83,7 +126,9 @@
                     <h2 class="text-lg font-semibold mb-2 dark:text-black">Principal of Managerial Finance</h2>
                     <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Lawrene J Gitman, Chad J.Zutter</p>
                     <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Year: 2015 (14th Edition)</p>
-                    <button class="bg-green-500 text-black py-2 px-4 rounded-full download-btn" data-pdf-link="https://drive.google.com/file/d/1y2Msxif90GTfSti5_D_ittuLnTzB7dIt/view?usp=sharing">Download</button>
+                    <button class="bg-green-500 text-black py-2 px-4 rounded-full download-btn"
+                        data-pdf-link="https://drive.google.com/file/d/1y2Msxif90GTfSti5_D_ittuLnTzB7dIt/view?usp=sharing">Download
+                    </button>
                 </div>
             </div>
 
@@ -95,7 +140,9 @@
                     <h2 class="text-lg font-semibold mb-2 dark:text-black">Macroeconomics</h2>
                     <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">N.Gregory, Mankiw</p>
                     <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Year : 2015 (9th Edition)</p>
-                    <button class="bg-green-500 text-black py-2 px-4 rounded-full download-btn" data-pdf-link="https://drive.google.com/file/d/1j-KEfM4AcPho2XMRd4HlrHhYaWlCiNoO/view?usp=sharing">Download</button>
+                    <button class="bg-green-500 text-black py-2 px-4 rounded-full download-btn"
+                        data-pdf-link="https://drive.google.com/file/d/1j-KEfM4AcPho2XMRd4HlrHhYaWlCiNoO/view?usp=sharing">Download
+                    </button>
                 </div>
             </div>
 
@@ -107,7 +154,9 @@
                     <h2 class="text-lg font-semibold mb-2 dark:text-black">Business Ethics</h2>
                     <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Manuel G.Velasquez</p>
                     <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">7th Edition</p>
-                    <button class="bg-green-500 text-black py-2 px-4 rounded-full download-btn" data-pdf-link="https://drive.google.com/file/d/1OzdylIsBJcREVvCnKIA1NiMuflfTaSlU/view?usp=sharing">Download</button>
+                    <button class="bg-green-500 text-black py-2 px-4 rounded-full download-btn"
+                        data-pdf-link="https://drive.google.com/file/d/1OzdylIsBJcREVvCnKIA1NiMuflfTaSlU/view?usp=sharing">Download
+                    </button>
                 </div>
             </div>
 
@@ -119,7 +168,9 @@
                     <h2 class="text-lg font-semibold mb-2 dark:text-black">Entrepreneurship</h2>
                     <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Bruce R.Barringer, R.Duane Ireland</p>
                     <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">4th Edition</p>
-                    <button class="bg-green-500 text-black py-2 px-4 rounded-full download-btn" data-pdf-link="https://drive.google.com/file/d/1xRwRXf9tGtNuMXdur7JyCC5pPxTcW7fc/view?usp=sharing">Download</button>
+                    <button class="bg-green-500 text-black py-2 px-4 rounded-full download-btn"
+                        data-pdf-link="https://drive.google.com/file/d/1xRwRXf9tGtNuMXdur7JyCC5pPxTcW7fc/view?usp=sharing">Download
+                    </button>
                 </div>
             </div>
 
@@ -131,9 +182,73 @@
                     <h2 class="text-lg font-semibold mb-2 dark:text-black">Human Resources Management</h2>
                     <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Dessler, Gary</p>
                     <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Year : 2020</p>
-                    <button class="bg-green-500 text-black py-2 px-4 rounded-full download-btn" data-pdf-link="https://drive.google.com/file/d/1KvfPGIshsy_iR7d9dMFUqsQAdeD5nooT/view?usp=sharing">Download</button>
+                    <button class="bg-green-500 text-black py-2 px-4 rounded-full download-btn"
+                        data-pdf-link="https://drive.google.com/file/d/1KvfPGIshsy_iR7d9dMFUqsQAdeD5nooT/view?usp=sharing">Download
+                    </button>
                 </div>
             </div>
+        
+            <!-- ... (rest of your cards) -->
+        </div>
+
+        <!-- Notes Cards Section (Hidden by default) -->
+        <div id="notesCardsSection" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 hidden">
+            <!-- ... (rest of your notes cards) --><!-- Card 1 -->
+            <div class="bg-white dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg">
+                <!-- Card content goes here -->
+                <img src="notes1.png" alt="PDF Preview" class="w-full h-40 object-cover">
+                <div class="p-4 flex flex-col justify-center items-center">
+                    <h2 class="text-lg font-semibold mb-2 dark:text-black">Note 1</h2>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Author: John Doe</p>
+                    <p class="text-sm text-gray-600:text-gray-400 mb-4">Year : 2021</p>
+                    <button class="bg-green-500 text-black py-2 px-4 rounded-full download-btn"
+                        data-pdf-link="https://drive.google.com/file/d/11111111111111111111111111111111/view?usp=sharing">Download
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-white dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg">
+                <!-- Card content goes here -->
+                <img src="notes2.png" alt="PDF Preview" class="w-full h-40 object-cover">
+                <div class="p-4 flex flex-col justify-center items-center">
+                    <h2 class="text-lg font-semibold mb-2 dark:text-black">Note 2</h2>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Author: Jane Doe</p>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Year : 2021</p>
+                    <button class="bg-green-500 text-black py-2 px-4 rounded-full download-btn"
+                        data-pdf-link="https://drive.google.com/file/d/22222222222222222222222222222222/view?usp=sharing">Download
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-white dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg">
+                <!-- Card content goes here -->
+                <img src="notes3.png" alt="PDF Preview" class="w-full h-40 object-cover">
+                <div class="p-4 flex flex-col justify-center items-center">
+                    <h2 class="text-lg font-semibold mb-2 dark:text-black">Note 3</h2>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Author: Joe Doe</p>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Year : 2021</p>
+                    <button class="bg-green-500 text-black py-2 px-4 rounded-full download-btn"
+                        data-pdf-link="https://drive.google.com/file/d/33333333333333333333333333333333/view?usp=sharing">Download
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="bg-white dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg">
+                <!-- Card content goes here -->
+                <img src="notes4.png" alt="PDF Preview" class="w-full h-40 object-cover">
+                <div class="p-4 flex flex-col justify-center items-center">
+                    <h2 class="text-lg font-semibold mb-2 dark:text-black">Note 4</h2>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Author: Janet Doe</p>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Year : 2021</p>
+                    <button class="bg-green-500 text-black py-2 px-4 rounded-full download-btn"
+                        data-pdf-link="https://drive.google.com/file/d/44444444444444444444444444444444/view?usp=sharing">Download
+                    </button>
+                </div>
+            </div>
+        </div>
         </div>
 
     </div>
