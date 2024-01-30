@@ -6,12 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HRM 8th Batch PDFs</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap">
     <link rel="icon" href="pdf.png">
     <style>
         .fonts {
             font-weight: 900;
             font-family: 'Cinzel', sans-serif;
+        }  
+
+        .open-sans{
+            font-weight: 400;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .open-sans-one{
+            font-weight: 700;
+            font-family: 'Open Sans', sans-serif;
         }
 
         /* Add this style for the underline effect */
@@ -49,7 +60,7 @@
         /* Add this style for dark mode */
         body.dark {
             background-color: black;
-            color: white; 
+            color: white;  
         }
 
         body.dark .button-toggle:hover {
@@ -69,10 +80,6 @@
             padding: 10px 12px;
             border-radius: 10px;
         }
-
-        #notesFeatureButton.dark{
-            color: white;
-        }
     </style>
 </head>
 
@@ -84,7 +91,7 @@
         <div class="flex items-center justify-between mb-8">
            <a href="index.html"><img src="pdf.png" alt="Your Logo" class="h-12">
         </a> 
-            <h1 class="text-2xl fonts text-green-600 font-semibold">HRM Eighth Batch</h1>
+            <h1 class="text-2xl sm:text-xl md:text-xl fonts text-green-600 font-semibold">HRM Eighth Batch</h1>
             <div id="darkModeToggle" class="cursor-pointer">
                 <!-- You can replace the icons with your desired images -->
                 <img id="lightModeIcon" src="light.png" alt="Light Mode" class="h-8">
@@ -93,10 +100,10 @@
         </div>
 
         <!-- Books and Notes Feature (Buttons) -->
-        <button id="booksFeatureButton" class="button-toggle  cursor-pointer mr-4 mb-5  ">
+        <button id="booksFeatureButton" class="button-toggle open-sans  cursor-pointer mr-4 mb-5  ">
             Books
         </button>
-        <button id="notesFeatureButton" class="button-toggle cursor-pointer mr-4 mb-5">
+        <button id="notesFeatureButton" class="button-toggle open-sans cursor-pointer mr-4 mb-5">
             Notes
         </button>
 
@@ -106,9 +113,9 @@
                 <!-- Card content goes here -->
                 <img src="hrm.png" alt="PDF Preview" class="w-full h-40 object-cover">
                 <div class="p-4 flex flex-col justify-center items-center">
-                    <h2 class="text-lg font-semibold text-gray-900 mb-2 dark:text-black">Human Resources Management</h2>
-                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Dessler, Gary</p>
-                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Year : 2020</p>
+                    <h2 class="text-lg font-semibold text-gray-900 open-sans-one mb-2 dark:text-black">Human Resources Management</h2>
+                    <p class="text-sm text-gray-600 open-sans dark:text-gray-400 mb-4">Dessler, Gary</p>
+                    <p class="text-sm text-gray-600 open-sans dark:text-gray-400 mb-4">Year : 2020</p>
                     <button class="bg-green-500 text-black py-2 px-4 rounded-full download-btn"
                         data-pdf-link="https://drive.google.com/file/d/1KvfPGIshsy_iR7d9dMFUqsQAdeD5nooT/view?usp=sharing">Download
                     </button>
@@ -120,9 +127,9 @@
                 <!-- Card content goes here -->
                 <img src="finance.png" alt="PDF Preview" class="w-full h-40 object-cover">
                 <div class="p-4 flex flex-col justify-center items-center">
-                    <h2 class="text-lg font-semibold mb-2 text-gray-900 dark:text-black">Principal of Managerial Finance</h2>
-                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Lawrene J Gitman, Chad J.Zutter</p>
-                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Year: 2015 (14th Edition)</p>
+                    <h2 class="text-lg font-semibold mb-2 open-sans-one text-gray-900 dark:text-black">Principal of Managerial Finance</h2>
+                    <p class="text-sm text-gray-600 open-sans dark:text-gray-400 mb-4">Lawrene J Gitman, Chad J.Zutter</p>
+                    <p class="text-sm text-gray-600 open-sans dark:text-gray-400 mb-4">Year: 2015 (14th Edition)</p>
                     <button class="bg-green-500 text-black py-2 px-4 rounded-full download-btn"
                         data-pdf-link="https://drive.google.com/file/d/1y2Msxif90GTfSti5_D_ittuLnTzB7dIt/view?usp=sharing">Download
                     </button>
@@ -134,9 +141,9 @@
                 <!-- Card content goes here -->
                 <img src="macro.png" alt="PDF Preview" class="w-full h-40 object-cover">
                 <div class="p-4 flex flex-col justify-center items-center">
-                    <h2 class="text-lg font-semibold mb-2 text-gray-900 dark:text-black">Macroeconomics</h2>
-                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">N.Gregory, Mankiw</p>
-                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Year : 2015 (9th Edition)</p>
+                    <h2 class="text-lg font-semibold open-sans-one mb-2 text-gray-900 dark:text-black">Macroeconomics</h2>
+                    <p class="text-sm text-gray-600 open-sans dark:text-gray-400 mb-4">N.Gregory, Mankiw</p>
+                    <p class="text-sm text-gray-600 open-sans dark:text-gray-400 mb-4">Year : 2015 (9th Edition)</p>
                     <button class="bg-green-500 text-black py-2 px-4 rounded-full download-btn"
                         data-pdf-link="https://drive.google.com/file/d/1j-KEfM4AcPho2XMRd4HlrHhYaWlCiNoO/view?usp=sharing">Download
                     </button>
@@ -148,9 +155,9 @@
                 <!-- Card content goes here -->
                 <img src="ethics.png" alt="PDF Preview" class="w-full h-40 object-cover">
                 <div class="p-4 flex flex-col justify-center items-center">
-                    <h2 class="text-lg font-semibold text-gray-900 mb-2 dark:text-black">Business Ethics</h2>
-                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Manuel G.Velasquez</p>
-                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">7th Edition</p>
+                    <h2 class="text-lg font-semibold open-sans-one text-gray-900 mb-2 dark:text-black">Business Ethics</h2>
+                    <p class="text-sm text-gray-600 open-sans dark:text-gray-400 mb-4">Manuel G.Velasquez</p>
+                    <p class="text-sm text-gray-600 open-sans dark:text-gray-400 mb-4">7th Edition</p>
                     <button class="bg-green-500 text-black py-2 px-4 rounded-full download-btn"
                         data-pdf-link="https://drive.google.com/file/d/1OzdylIsBJcREVvCnKIA1NiMuflfTaSlU/view?usp=sharing">Download
                     </button>
@@ -162,9 +169,9 @@
                 <!-- Card content goes here -->
                 <img src="entrpreneur.png" alt="PDF Preview" class="w-full h-40 object-cover">
                 <div class="p-4 flex flex-col justify-center items-center">
-                    <h2 class="text-lg font-semibold mb-2 text-gray-900 dark:text-black">Entrepreneurship</h2>
-                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Bruce R.Barringer, R.Duane Ireland</p>
-                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">4th Edition</p>
+                    <h2 class="text-lg font-semibold open-sans-one mb-2 text-gray-900 dark:text-black">Entrepreneurship</h2>
+                    <p class="text-sm text-gray-600 open-sans dark:text-gray-400 mb-4">Bruce R.Barringer, R.Duane Ireland</p>
+                    <p class="text-sm text-gray-600 open-sans dark:text-gray-400 mb-4">4th Edition</p>
                     <button class="bg-green-500 text-black py-2 px-4 rounded-full download-btn"
                         data-pdf-link="https://drive.google.com/file/d/1xRwRXf9tGtNuMXdur7JyCC5pPxTcW7fc/view?usp=sharing">Download
                     </button>
@@ -176,9 +183,9 @@
                 <!-- Card content goes here -->
                 <img src="hrm.png" alt="PDF Preview" class="w-full h-40 object-cover">
                 <div class="p-4 flex flex-col justify-center items-center">
-                    <h2 class="text-lg font-semibold text-gray-900 mb-2 dark:text-black">Human Resources Management</h2>
-                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Dessler, Gary</p>
-                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Year : 2020</p>
+                    <h2 class="text-lg font-semibold open-sans-one text-gray-900 mb-2 dark:text-black">Human Resources Management</h2>
+                    <p class="text-sm text-gray-600 open-sans dark:text-gray-400 mb-4">Dessler, Gary</p>
+                    <p class="text-sm text-gray-600 open-sans dark:text-gray-400 mb-4">Year : 2020</p>
                     <button class="bg-green-500 text-black py-2 px-4 rounded-full download-btn"
                         data-pdf-link="https://drive.google.com/file/d/1KvfPGIshsy_iR7d9dMFUqsQAdeD5nooT/view?usp=sharing">Download
                     </button>
