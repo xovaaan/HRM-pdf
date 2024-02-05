@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const courses = coursesData[semesterNumber];
         courses.forEach(course => {
             const card = document.createElement('div');
-            card.classList.add('bg-white', 'cursor-pointer', 'dark:bg-gray-700', 'rounded-lg', 'overflow-hidden', 'shadow-lg', 'course-card');
+            card.classList.add('bg-white','cursor-pointer', 'dark:bg-gray-700', 'rounded-lg', 'overflow-hidden', 'shadow-lg', 'course-card');
             card.innerHTML = `
                 <div class="p-4 flex flex-col justify-center items-center">
                     <img src="macro.png" alt="Course Image" class="mb-2 w-full h-40 object-cover rounded">
@@ -144,4 +144,3 @@ resetFeatures();
 
 
 });
-
