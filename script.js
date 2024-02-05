@@ -113,25 +113,33 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // Books and Notes Feature Toggle
-    booksFeatureButton.addEventListener('click', () => {
-        resetFeatures();
-        booksFeatureButton.classList.add('active');
-        semesterCardsSection.classList.remove('hidden');
-    });
+    // Books and Notes Feature Toggle
+booksFeatureButton.addEventListener('click', () => {
+    resetFeatures();
+    booksFeatureButton.classList.add('active');
+    semesterCardsSection.classList.remove('hidden');
+    pdfSection.classList.add('hidden');
+});
 
-    notesFeatureButton.addEventListener('click', () => {
-        resetFeatures();
-        notesFeatureButton.classList.add('active');
-        semesterCardsSection.classList.remove('hidden');
-    });
+notesFeatureButton.addEventListener('click', () => {
+    resetFeatures();
+    notesFeatureButton.classList.add('active');
+    semesterCardsSection.classList.remove('hidden');
+    pdfSection.classList.add('hidden');
+});
 
-    // Reset features to default state
-    function resetFeatures() {
-        booksFeatureButton.classList.remove('active');
-        notesFeatureButton.classList.remove('active');
-        coursesSection.innerHTML = '';
-        semesterCardsSection.classList.add('hidden');
-        coursesSection.classList.add('hidden');
-        backButton.classList.add('hidden');
-    }
+// Reset features to default state
+function resetFeatures() {
+    booksFeatureButton.classList.remove('active');
+    notesFeatureButton.classList.remove('active');
+    coursesSection.innerHTML = '';
+    semesterCardsSection.classList.add('hidden');
+    coursesSection.classList.add('hidden');
+    backButton.classList.add('hidden');
+}
+
+// Initial setup to show PDF section when the page loads and start gradient animation
+resetFeatures();
+setGradientColors();
+
 });

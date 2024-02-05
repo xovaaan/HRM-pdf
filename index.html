@@ -11,6 +11,10 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap">
     <link rel="icon" href="images/bookmark.png">
     <style>
+
+        body{
+         background-image: url(Shore.jpg);
+        }
         .fonts {
             font-weight: 900;
             font-family: 'Cinzel', sans-serif;
@@ -59,7 +63,7 @@
         }
 
         body.dark {
-            background-color: black;
+            background-image: url(Midnight\ City.jpg);
             color: white;
         }
 
@@ -112,6 +116,14 @@
         .course-card:hover {
             background-color: #f1f1f1;
         }
+
+        .btns{
+            font-size: 25px;
+        }
+   
+        body.dark #pdfSection p {
+    color: #fff; /* Set the color to white in dark mode */
+}
     </style>
 </head>
 
@@ -122,7 +134,7 @@
         <!-- Header with Logo -->
         <div class="flex items-center justify-between mb-8">
             <a href="index.html"><img src="images/bookmark.png" alt="Your Logo" class="h-12"></a>
-            <h1 class="text-2xl sm:text-lg lg-text-xl md:text-xl fonts text-green-600 font-semibold">HRM 8th Batch</h1>
+            <h1 class="text-2xl sm:text-lg lg-text-xl md:text-xl fonts text-green-600 font-semibold">PDFZENN</h1>
             <div id="darkModeToggle" class="cursor-pointer">
                 <img id="lightModeIcon" src="light.png" alt="Light Mode" class="h-8">
                 <img id="darkModeIcon" src="dark-mode.png" alt="Dark Mode" class="h-8 hidden">
@@ -130,18 +142,25 @@
         </div>
 
         <!-- Books and Notes Feature (Buttons) -->
-        <button id="booksFeatureButton" class="button-toggle open-sans cursor-pointer mr-4 mb-5">
+        <button id="booksFeatureButton" class="button-toggle btns open-sans cursor-pointer mr-4 mb-5">
             Books
         </button>
-        <button id="notesFeatureButton" class="button-toggle open-sans cursor-pointer mr-4 mb-5">
+        <button id="notesFeatureButton" class="button-toggle btns open-sans cursor-pointer mr-4 mb-5">
             Notes
         </button>
+      <!-- Title and Description (Initially Shown) -->
+       <div id="pdfSection" class="text-center mt-48 mb-8">
+       <h2 class="text-5xl md:text-6xl lg:text-8xl font-bold open-sans mb-4 ">HRM PDFs</h2>
+       <p class="text-xl md:text-xl lg:text-2xl open-sans text-gray-700 tracking-widest">Find all your books, notes, and essential PDFs.</p>
+       </div>
+
+
 
         <!-- Semester Cards Section (Hidden by default) -->
-        <div id="semesterCardsSection" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 hidden">
+        <div id="semesterCardsSection" class="grid grid-cols-1 lg:mt-36 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 hidden">
             <!-- Semester Card 1 -->
             <div class="bg-white cursor-pointer dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg semester-card">
-                <div class="p-4 flex flex-col justify-center items-center">
+                <div class="p-6 pt-6 flex flex-col justify-center items-center">
                     <h2 class="text-lg font-semibold open-sans-one text-gray-900 mb-2 dark:text-black">1st Semester</h2>
                     <button class="bg-green-500 open-sans text-black py-2 px-4 rounded-full download-btn"
                         onclick="showCoursesForSemester(1)">Show Courses</button>
@@ -150,7 +169,7 @@
 
             <!-- Semester Card 2 -->
             <div class="bg-white cursor-pointer dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg semester-card">
-                <div class="p-4 flex flex-col justify-center items-center">
+                <div class="p-4  pt-6  flex flex-col justify-center items-center">
                     <h2 class="text-lg font-semibold open-sans-one text-gray-900 mb-2 dark:text-black">2nd Semester</h2>
                     <button class="bg-green-500 open-sans text-black py-2 px-4 rounded-full download-btn"
                         onclick="showCoursesForSemester(2)">Show Courses</button>
@@ -161,42 +180,42 @@
 
             <!-- Semester Card 4 -->
             <div class="bg-white cursor-pointer dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg semester-card">
-                <div class="p-4 flex flex-col justify-center items-center">
+                <div class="p-4  pt-6 flex flex-col justify-center items-center">
                     <h2 class="text-lg font-semibold open-sans-one text-gray-900 mb-2 dark:text-black">3th Semester</h2>
                     <button class="bg-green-500 open-sans text-black py-2 px-4 rounded-full download-btn"
                         onclick="showCoursesForSemester(3)">Show Courses</button>
                 </div>
             </div>
             <div class="bg-white cursor-pointer dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg semester-card">
-                <div class="p-4 flex flex-col justify-center items-center">
+                <div class="p-4  pt-6  flex flex-col justify-center items-center">
                     <h2 class="text-lg font-semibold open-sans-one text-gray-900 mb-2 dark:text-black">4th Semester</h2>
                     <button class="bg-green-500 open-sans text-black py-2 px-4 rounded-full download-btn"
                         onclick="showCoursesForSemester(4)">Show Courses</button>
                 </div>
             </div>
             <div class="bg-white cursor-pointer dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg semester-card">
-                <div class="p-4 flex flex-col justify-center items-center">
+                <div class="p-4  pt-6  flex flex-col justify-center items-center">
                     <h2 class="text-lg font-semibold open-sans-one text-gray-900 mb-2 dark:text-black">5th Semester</h2>
                     <button class="bg-green-500 open-sans text-black py-2 px-4 rounded-full download-btn"
                         onclick="showCoursesForSemester(5)">Show Courses</button>
                 </div>
             </div>
             <div class="bg-white cursor-pointer dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg semester-card">
-                <div class="p-4 flex flex-col justify-center items-center">
+                <div class="p-4  pt-6  flex flex-col justify-center items-center">
                     <h2 class="text-lg font-semibold open-sans-one text-gray-900 mb-2 dark:text-black">6th Semester</h2>
                     <button class="bg-green-500 open-sans text-black py-2 px-4 rounded-full download-btn"
                         onclick="showCoursesForSemester(6)">Show Courses</button>
                 </div>
             </div>
             <div class="bg-white cursor-pointer dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg semester-card">
-                <div class="p-4 flex flex-col justify-center items-center">
+                <div class="p-4  pt-6  flex flex-col justify-center items-center">
                     <h2 class="text-lg font-semibold open-sans-one text-gray-900 mb-2 dark:text-black">7th Semester</h2>
                     <button class="bg-green-500 open-sans text-black py-2 px-4 rounded-full download-btn"
                         onclick="showCoursesForSemester(7)">Show Courses</button>
                 </div>
             </div>
             <div class="bg-white cursor-pointer dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg semester-card">
-                <div class="p-4 flex flex-col justify-center items-center">
+                <div class="p-4  pt-6  flex flex-col justify-center items-center">
                     <h2 class="text-lg font-semibold open-sans-one text-gray-900 mb-2 dark:text-black">8th Semester</h2>
                     <button class="bg-green-500 open-sans text-black py-2 px-4 rounded-full download-btn"
                         onclick="showCoursesForSemester(8)">Show Courses</button>
