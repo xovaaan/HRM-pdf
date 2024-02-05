@@ -63,7 +63,7 @@
         }
 
         body.dark {
-            background-image: url(Midnight\ City.jpg);
+            background-image: url(Deep\ Space.jpg);
             color: white;
         }
 
@@ -88,6 +88,7 @@
         /* Additional styles for the course page */
         .semester-card {
             cursor: pointer;
+            transition: filter 0.3s ease;
         }
 
         .semester-card:hover {
@@ -111,6 +112,7 @@
 
         .course-card {
             cursor: pointer;
+            transition: filter 0.3s ease;
         }
 
         .course-card:hover {
@@ -120,10 +122,9 @@
         .btns{
             font-size: 25px;
         }
-   
         body.dark #pdfSection p {
-    color: #fff; /* Set the color to white in dark mode */
-}
+        color: #fff; /* Set the color to white in dark mode */
+         }
     </style>
 </head>
 
@@ -134,7 +135,7 @@
         <!-- Header with Logo -->
         <div class="flex items-center justify-between mb-8">
             <a href="index.html"><img src="images/bookmark.png" alt="Your Logo" class="h-12"></a>
-            <h1 class="text-2xl sm:text-lg lg-text-xl md:text-xl fonts text-green-600 font-semibold">PDFZENN</h1>
+            <h1 class="text-3xl sm:text-xl lg-text-2xl md:text-4xl  fonts text-green-600 font-semibold tracking-widest">PDFZENN</h1>
             <div id="darkModeToggle" class="cursor-pointer">
                 <img id="lightModeIcon" src="light.png" alt="Light Mode" class="h-8">
                 <img id="darkModeIcon" src="dark-mode.png" alt="Dark Mode" class="h-8 hidden">
@@ -149,7 +150,7 @@
             Notes
         </button>
       <!-- Title and Description (Initially Shown) -->
-       <div id="pdfSection" class="text-center mt-48 mb-8">
+       <div id="pdfSection" class="text-center mt-40 mb-8">
        <h2 class="text-5xl md:text-6xl lg:text-8xl font-bold open-sans mb-4 ">HRM PDFs</h2>
        <p class="text-xl md:text-xl lg:text-2xl open-sans text-gray-700 tracking-widest">Find all your books, notes, and essential PDFs.</p>
        </div>

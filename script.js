@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const coursesSection = document.getElementById('coursesSection');
     const backButton = document.getElementById('backButton');
 
+
     // By default, show the dark mode icon in light mode
     const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
     lightModeIcon.classList.toggle('hidden', isDarkMode);
@@ -140,6 +141,7 @@ function resetFeatures() {
 
 // Initial setup to show PDF section when the page loads and start gradient animation
 resetFeatures();
-setGradientColors();
+
 
 });
+
