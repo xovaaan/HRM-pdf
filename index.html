@@ -10,129 +10,8 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap">
     <link rel="icon" href="images/bookmark.png">
-    <style>
-
-        body{
-         background-image: url(Jonquil.jpg);
-        }
-        .fonts {
-            font-weight: 900;
-            font-family: 'Cinzel', sans-serif;
-        }
-
-        .open-sans {
-            font-weight: 400;
-            font-family: 'Open Sans', sans-serif;
-        }
-
-        .open-sans-one {
-            font-weight: 700;
-            font-family: 'Open Sans', sans-serif;
-        }
-
-        #backButton {
-        background-color: #0FB980;
-        color: black;
-        padding: 10px 12px;
-        margin-top: 30px;
-        border-radius: 10px;
-    }
-
-        .button-toggle {
-            position: relative;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        .button-toggle:hover {
-            background-color: #f1f1f1;
-        }
-
-        .button-toggle.active {
-            background-color: black;
-            color: white;
-        }
-
-        .button-toggle.active::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 100%;
-            width: 100%;
-            height: 2px;
-            background-color: white;
-        }
-
-        body.dark {
-            background-image: url(Deep\ Space.jpg);
-            color: white;
-        }
-
-        body.dark .button-toggle:hover {
-            background-color: #1a1a1a;
-        }
-
-        body.dark .button-toggle.active {
-            background-color: green;
-        }
-
-        #booksFeatureButton {
-            padding: 10px 12px;
-            border-radius: 10px;
-        }
-
-        #notesFeatureButton {
-            padding: 10px 12px;
-            border-radius: 10px;
-        }
-
-        /* Additional styles for the course page */
-        .semester-card {
-            cursor: pointer;
-            transition: filter 0.3s ease;
-        }
-
-        .semester-card:hover {
-            background-color: #f1f1f1;
-        }
-
-        .semester-card.active {
-            background-color: black;
-            color: white;
-        }
-
-        .semester-card.active::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 100%;
-            width: 100%;
-            height: 2px;
-            background-color: white;
-        }
-
-        .course-card {
-            cursor: pointer;
-            transition: filter 0.3s ease;
-        }
-
-        .course-card:hover {
-            background-color: #f1f1f1;
-        }
-
-        .btns{
-            font-size: 25px;
-        }
-        body.dark #pdfSection p {
-        color: #fff; /* Set the color to white in dark mode */
-         }
-
-         body.dark footer p{
-            color: #f1f1f1;
-         }
-
-
-
-    </style>
+    <link rel="stylesheet" href="style.css">
+    
 </head>
 
 <body class="bg-gray-200 text-gray-800 dark:text-white">
@@ -246,6 +125,14 @@
     <p class="tracking-widest open-sans text-gray-600 dark:text-gray-400">&copy; Samiul Basir</p>
 </footer>
 
+  <!-- Comment Popup -->
+  <div id="commentPopup" class="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-50 hidden">
+    <div class="bg-white p-4 rounded-lg shadow-md">
+        <label for="userNameInput" class="block mb-2 text-lg">Enter your name:</label>
+        <input type="text" id="userNameInput" class="w-full p-2 border rounded" placeholder="Your Name">
+        <button onclick="submitCommentWithUserName()" class="mt-2 bg-green-500 text-white p-2 rounded">Submit</button>
+    </div>
+</div>
 
     <script src="script.js"></script>
 
