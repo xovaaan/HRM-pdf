@@ -20,7 +20,7 @@
 
         <!-- Header with Logo -->
         <div class="flex items-center justify-between mb-8">
-            <a href="index.html"><img src="images/bookmark.png" alt="Your Logo" class="h-12"></a>
+            <a href="index.html"><img src="images/bookmark.png" alt="Your Logo" class="h-12 ml-4"></a>
             <h1 class="text-3xl sm:text-xl lg-text-2xl md:text-4xl  fonts text-green-600 font-semibold tracking-widest">PDFZENN</h1>
             <div id="darkModeToggle" class="cursor-pointer">
                 <img id="lightModeIcon" src="light.png" alt="Light Mode" class="h-8">
@@ -115,6 +115,15 @@
             <!-- ... Courses will be dynamically added here based on the selected semester -->
         </div>
 
+        <!-- Comment Section (Initially Hidden) -->
+<div id="commentSection" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 md:gap-8 hidden mt-8">
+    <h2 class="text-2xl font-semibold col-span-full mb-4">Comments</h2>
+    <div id="commentsList" class="col-span-full mb-4"></div>
+    <textarea id="commentInput" class="w-full p-2 mb-4 col-span-full" placeholder="Leave a comment..."></textarea>
+    <button onclick="submitComment()" class="bg-green-500 text-white py-2 px-4 rounded-full col-span-full">Submit Comment</button>
+</div>
+
+
         <!-- Back Button (Hidden by default) -->
         <button id="backButton" class="button-toggle tracking-widest open-sans cursor-pointer hidden" onclick="goBack()">
             Back
@@ -125,14 +134,9 @@
     <p class="tracking-widest open-sans text-gray-600 dark:text-gray-400">&copy; Samiul Basir</p>
 </footer>
 
-  <!-- Comment Popup -->
-  <div id="commentPopup" class="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-50 hidden">
-    <div class="bg-white p-4 rounded-lg shadow-md">
-        <label for="userNameInput" class="block mb-2 text-lg">Enter your name:</label>
-        <input type="text" id="userNameInput" class="w-full p-2 border rounded" placeholder="Your Name">
-        <button onclick="submitCommentWithUserName()" class="mt-2 bg-green-500 text-white p-2 rounded">Submit</button>
-    </div>
-</div>
+
+
+
 
     <script src="script.js"></script>
 

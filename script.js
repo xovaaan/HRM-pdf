@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         lightModeIcon.classList.toggle('hidden', !isDarkMode);
         darkModeIcon.classList.toggle('hidden', isDarkMode);
     });
+    
 
     // Function to show the Courses for a specific semester
     window.showCoursesForSemester = (semesterNumber) => {
@@ -31,53 +32,53 @@ document.addEventListener('DOMContentLoaded', () => {
         // Mock data for courses (replace this with your actual data)
         const coursesData = {
             1: [
-                { name: 'Course 1A', link: 'https://drive.google.com/file/d/1KvfPGIshsy_iR7d9dMFUqsQAdeD5nooT/view?usp=sharing', author: 'Author 1', edition: '1st Edition' },
-                { name: 'Course 1A', link: 'https://drive.google.com/file/d/1KvfPGIshsy_iR7d9dMFUqsQAdeD5nooT/view?usp=sharing', author: 'Author 1', edition: '1st Edition' },
-                { name: 'Course 1A', link: 'https://drive.google.com/file/d/1KvfPGIshsy_iR7d9dMFUqsQAdeD5nooT/view?usp=sharing', author: 'Author 1', edition: '1st Edition' },
+                { name: 'Course 1A', link: 'https://drive.google.com/file/d/1KvfPGIshsy_iR7d9dMFUqsQAdeD5nooT/view?usp=sharing', author: 'Author 1', edition: '1st Edition', image: 'entrpreneur.png' },
+                { name: 'Course 1A', link: 'https://drive.google.com/file/d/1KvfPGIshsy_iR7d9dMFUqsQAdeD5nooT/view?usp=sharing', author: 'Author 1', edition: '1st Edition', image: 'entrpreneur.png' },
+                { name: 'Course 1A', link: 'https://drive.google.com/file/d/1KvfPGIshsy_iR7d9dMFUqsQAdeD5nooT/view?usp=sharing', author: 'Author 1', edition: '1st Edition', image: 'entrpreneur.png' },
                 // Add more courses as needed
             ],
 
             2: [
-                { name: 'Course 2A', link: 'https://example.com/course2A.pdf', author: 'Author 2', edition: '2nd Edition' },
-                { name: 'Course 2A', link: 'https://example.com/course2A.pdf', author: 'Author 2', edition: '2nd Edition' },
-                { name: 'Course 2A', link: 'https://example.com/course2A.pdf', author: 'Author 2', edition: '2nd Edition' },
+                { name: 'Course 2A', link: 'https://example.com/course2A.pdf', author: 'Author 2', edition: '2nd Edition', image: 'entrpreneur.png' },
+                { name: 'Course 2A', link: 'https://example.com/course2A.pdf', author: 'Author 2', edition: '2nd Edition', image: 'entrpreneur.png' },
+                { name: 'Course 2A', link: 'https://example.com/course2A.pdf', author: 'Author 2', edition: '2nd Edition', image: 'entrpreneur.png' },
                 // Add more courses as needed
             ],
 
             // ... (add data for other semesters as needed)
             3: [
-                { name: 'Course 3A', link: 'https://example.com/course4A.pdf', author: 'Author 4', edition: '4th Edition' },
-                { name: 'Course 3A', link: 'https://example.com/course4A.pdf', author: 'Author 4', edition: '4th Edition' },
+                { name: 'Course 3A', link: 'https://example.com/course4A.pdf', author: 'Author 4', edition: '4th Edition', image: 'entrpreneur.png' },
+                { name: 'Course 3A', link: 'https://example.com/course4A.pdf', author: 'Author 4', edition: '4th Edition', image: 'entrpreneur.png' },
                 // Add more courses as needed
             ],
 
             4: [
-                { name: 'Course 4A', link: 'https://example.com/course4A.pdf', author: 'Author 4', edition: '4th Edition' },
-                { name: 'Course 4A', link: 'https://example.com/course4A.pdf', author: 'Author 4', edition: '4th Edition' },
+                { name: 'Course 4A', link: 'https://example.com/course4A.pdf', author: 'Author 4', edition: '4th Edition', image: 'entrpreneur.png' },
+                { name: 'Course 4A', link: 'https://example.com/course4A.pdf', author: 'Author 4', edition: '4th Edition', image: 'entrpreneur.png' },
                 // Add more courses as needed
             ],
 
             5: [
-                { name: 'Course 5A', link: 'https://example.com/course4A.pdf', author: 'Author 4', edition: '4th Edition' },
-                { name: 'Course 5A', link: 'https://example.com/course4A.pdf', author: 'Author 4', edition: '4th Edition' },
+                { name: 'Course 5A', link: 'https://example.com/course4A.pdf', author: 'Author 4', edition: '4th Edition', image: 'entrpreneur.png' },
+                { name: 'Course 5A', link: 'https://example.com/course4A.pdf', author: 'Author 4', edition: '4th Edition', image: 'entrpreneur.png' },
                 // Add more courses as needed
             ],
 
             6: [
-                { name: 'Course 6A', link: 'https://example.com/course4A.pdf', author: 'Author 4', edition: '4th Edition' },
-                { name: 'Course 6A', link: 'https://example.com/course4A.pdf', author: 'Author 4', edition: '4th Edition' },
+                { name: 'Course 6A', link: 'https://example.com/course4A.pdf', author: 'Author 4', edition: '4th Edition', image: 'entrpreneur.png' },
+                { name: 'Course 6A', link: 'https://example.com/course4A.pdf', author: 'Author 4', edition: '4th Edition' , image: 'entrpreneur.png' },
                 // Add more courses as needed
             ],
 
             7: [
-                { name: 'Course 7A', link: 'https://example.com/course4A.pdf', author: 'Author 4', edition: '4th Edition' },
-                { name: 'Course 7A', link: 'https://example.com/course4A.pdf', author: 'Author 4', edition: '4th Edition' },
+                { name: 'Course 7A', link: 'https://example.com/course4A.pdf', author: 'Author 4', edition: '4th Edition', image: 'entrpreneur.png' },
+                { name: 'Course 7A', link: 'https://example.com/course4A.pdf', author: 'Author 4', edition: '4th Edition' , image: 'entrpreneur.png' },
                 // Add more courses as needed
             ],
 
             8: [
-                { name: 'Course 8A', link: 'https://example.com/course4A.pdf', author: 'Author 4', edition: '4th Edition' },
-                { name: 'Course 8A', link: 'https://example.com/course4A.pdf', author: 'Author 4', edition: '4th Edition' },
+                { name: 'Course 8A', link: 'https://example.com/course4A.pdf', author: 'Author 4', edition: '4th Edition', image: 'entrpreneur.png' },
+                { name: 'Course 8A', link: 'https://example.com/course4A.pdf', author: 'Author 4', edition: '4th Edition', image: 'entrpreneur.png' },
                 // Add more courses as needed
             ]
         };
@@ -88,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
             card.classList.add('bg-white','cursor-pointer', 'dark:bg-gray-700', 'rounded-lg', 'overflow-hidden', 'shadow-lg', 'course-card');
             card.innerHTML = `
                 <div class="p-4 flex flex-col justify-center items-center">
-                    <img src="macro.png" alt="Course Image" class="mb-2 w-full h-40 object-cover rounded">
+                    <img src="${course.image}" alt="Course Image" class="mb-2 w-full h-40 object-cover rounded">
                     <h2 class="text-lg font-semibold open-sans-one text-gray-900 mb-2 dark:text-black">${course.name}</h2>
                     <p class="text-md open-sans text-gray-700 mb-2 dark:text-gray-300">Author: ${course.author}</p>
                     <p class="text-md open-sans text-gray-700 mb-2 dark:text-gray-300">Edition: ${course.edition}</p>
@@ -144,3 +145,4 @@ resetFeatures();
 
 
 });
+
