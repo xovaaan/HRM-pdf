@@ -23,67 +23,38 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Function to show the Courses for a specific semester
-    window.showCoursesForSemester = (semesterNumber) => {
+    window.showCoursesForSemester = (semesterNumber, isBooks) => {
         fadeOut(semesterCardsSection, () => {
             semesterCardsSection.classList.add('hidden');
             backButton.classList.remove('hidden');
             coursesSection.innerHTML = ''; // Clear previous content
 
             // Mock data for courses (replace this with your actual data)
-            const coursesData = {
+            const booksData = {
                 1: [
-                    { name: 'Course 1A', link: 'https://drive.google.com/file/d/1KvfPGIshsy_iR7d9dMFUqsQAdeD5nooT/view?usp=sharing', author: 'Author 1', edition: '1st Edition', image: 'entrpreneur.png' },
-                    { name: 'Course 1A', link: 'https://drive.google.com/file/d/1KvfPGIshsy_iR7d9dMFUqsQAdeD5nooT/view?usp=sharing', author: 'Author 1', edition: '1st Edition', image: 'entrpreneur.png' },
-                    { name: 'Course 1A', link: 'https://drive.google.com/file/d/1KvfPGIshsy_iR7d9dMFUqsQAdeD5nooT/view?usp=sharing', author: 'Author 1', edition: '1st Edition', image: 'entrpreneur.png' },
-                    // Add more courses as needed
+                    { name: 'Entrepreneurship', author: 'Bruce R Barringer', edition: '4th Edition', image: '/entrpreneur.png', link: 'https://drive.google.com/file/d/1xRwRXf9tGtNuMXdur7JyCC5pPxTcW7fc/view?usp=sharing' },
+                    // Add more books as needed
                 ],
-    
                 2: [
-                    { name: 'Course 2A', link: 'https://example.com/course2A.pdf', author: 'Author 2', edition: '2nd Edition', image: 'entrpreneur.png' },
-                    { name: 'Course 2A', link: 'https://example.com/course2A.pdf', author: 'Author 2', edition: '2nd Edition', image: 'entrpreneur.png' },
-                    { name: 'Course 2A', link: 'https://example.com/course2A.pdf', author: 'Author 2', edition: '2nd Edition', image: 'entrpreneur.png' },
-                    // Add more courses as needed
+                    { name: 'Book 2A', author: 'Author 2', edition: '2nd Edition', image: 'book2A.jpg', link: 'https://example.com/book2A.pdf' },
+                    // Add more books as needed
                 ],
-    
                 // ... (add data for other semesters as needed)
-                3: [
-                    { name: 'Course 3A', link: 'https://example.com/course4A.pdf', author: 'Author 4', edition: '4th Edition', image: 'entrpreneur.png' },
-                    { name: 'Course 3A', link: 'https://example.com/course4A.pdf', author: 'Author 4', edition: '4th Edition', image: 'entrpreneur.png' },
-                    // Add more courses as needed
-                ],
-    
-                4: [
-                    { name: 'Course 4A', link: 'https://example.com/course4A.pdf', author: 'Author 4', edition: '4th Edition', image: 'entrpreneur.png' },
-                    { name: 'Course 4A', link: 'https://example.com/course4A.pdf', author: 'Author 4', edition: '4th Edition', image: 'entrpreneur.png' },
-                    // Add more courses as needed
-                ],
-    
-                5: [
-                    { name: 'Course 5A', link: 'https://example.com/course4A.pdf', author: 'Author 4', edition: '4th Edition', image: 'entrpreneur.png' },
-                    { name: 'Course 5A', link: 'https://example.com/course4A.pdf', author: 'Author 4', edition: '4th Edition', image: 'entrpreneur.png' },
-                    // Add more courses as needed
-                ],
-    
-                6: [
-                    { name: 'Course 6A', link: 'https://example.com/course4A.pdf', author: 'Author 4', edition: '4th Edition', image: 'entrpreneur.png' },
-                    { name: 'Course 6A', link: 'https://example.com/course4A.pdf', author: 'Author 4', edition: '4th Edition' , image: 'entrpreneur.png' },
-                    // Add more courses as needed
-                ],
-    
-                7: [
-                    { name: 'Course 7A', link: 'https://example.com/course4A.pdf', author: 'Author 4', edition: '4th Edition', image: 'entrpreneur.png' },
-                    { name: 'Course 7A', link: 'https://example.com/course4A.pdf', author: 'Author 4', edition: '4th Edition' , image: 'entrpreneur.png' },
-                    // Add more courses as needed
-                ],
-    
-                8: [
-                    { name: 'Course 8A', link: 'https://example.com/course4A.pdf', author: 'Author 4', edition: '4th Edition', image: 'entrpreneur.png' },
-                    { name: 'Course 8A', link: 'https://example.com/course4A.pdf', author: 'Author 4', edition: '4th Edition', image: 'entrpreneur.png' },
-                    // Add more courses as needed
-                ]
-                // ... Your existing course data ...
             };
 
+            const notesData = {
+                1: [
+                    { name: 'Entrpreneurship', source: 'ChatGPT', topics: 'Chapter 1', image: '/ent.jpg', link: 'https://drive.google.com/file/d/1YP08AjcScLL8Z4Xpmm4BOfi3ssi0dvK0/view?usp=sharing' },
+                    // Add more notes as needed
+                ],
+                2: [
+                    { name: 'Notes 2A', source: 'Source 2', topics: 'Topics 2', image: 'notes2A.jpg', link: 'https://example.com/notes2A.pdf' },
+                    // Add more notes as needed
+                ],
+                // ... (add data for other semesters as needed)
+            };
+
+            const coursesData = isBooks ? booksData : notesData;
             const courses = coursesData[semesterNumber];
             courses.forEach((course, index) => {
                 const card = document.createElement('div');
@@ -93,8 +64,12 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="p-4 flex flex-col justify-center items-center">
                             <img src="${course.image}" alt="Course Image" class="mb-2 w-full h-40 object-cover rounded">
                             <h2 class="text-lg font-semibold open-sans-one text-gray-900 mb-2 dark:text-black">${course.name}</h2>
-                            <p class="text-md open-sans text-gray-700 mb-2 dark:text-gray-300">Author: ${course.author}</p>
-                            <p class="text-md open-sans text-gray-700 mb-2 dark:text-gray-300">Edition: ${course.edition}</p>
+                            ${isBooks ? 
+                                `<p class="text-md open-sans text-gray-700 mb-2 dark:text-gray-300">Author: ${course.author}</p>
+                                <p class="text-md open-sans text-gray-700 mb-2 dark:text-gray-300">Edition: ${course.edition}</p>` :
+                                `<p class="text-md open-sans text-gray-700 mb-2 dark:text-gray-300">Source: ${course.source}</p>
+                                <p class="text-md open-sans text-gray-700 mb-2 dark:text-gray-300">Topics: ${course.topics}</p>`
+                            }
                             <button class="bg-green-500 open-sans text-black py-2 px-4 rounded-full download-btn"
                                 onclick="showDownloadLink('${course.link}')">Download</button>
                         </div>
@@ -128,6 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
         booksFeatureButton.classList.add('active');
         fadeIn(semesterCardsSection);
         pdfSection.classList.add('hidden');
+        window.showCoursesForSemester(1, true); // Default to show books for the 1st semester
     });
 
     notesFeatureButton.addEventListener('click', () => {
@@ -135,6 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
         notesFeatureButton.classList.add('active');
         fadeIn(semesterCardsSection);
         pdfSection.classList.add('hidden');
+        window.showCoursesForSemester(1, false); // Default to show notes for the 1st semester
     });
 
     // Reset features to default state

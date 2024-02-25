@@ -2,8 +2,12 @@ body{
     background-image: url(Jonquil.jpg);
    }
    .fonts {
-       font-weight: 900;
+       
        font-family: 'Cinzel', sans-serif;
+       background: linear-gradient(to right, #87CEEB, #FF69B4);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-weight: bolder;
    }
 
    .open-sans {
@@ -15,6 +19,8 @@ body{
        font-weight: 700;
        font-family: 'Open Sans', sans-serif;
    }
+
+
 
    #backButton {
    background-color: #0FB980;
@@ -30,7 +36,7 @@ body{
    }
 
    .button-toggle:hover {
-       background-color: #f1f1f1;
+       background-color: #0FB980;
    }
 
    .button-toggle.active {
