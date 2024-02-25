@@ -43,9 +43,9 @@
 
 
         <!-- Semester Cards Section (Hidden by default) -->
-        <div id="semesterCardsSection" class="grid grid-cols-1 lg:mt-36 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 hidden">
+        <div id="semesterCardsSection" class="grid grid-cols-1 lg:mt-36 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 hidden ">
             <!-- Semester Card 1 -->
-            <div class="bg-white cursor-pointer blur dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg semester-card">
+            <div class="backdrop-blur-15 cursor-pointer blur dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg semester-card">
                 <div class="p-6 pt-6 flex flex-col justify-center items-center">
                     <h2 class="text-lg font-semibold open-sans-one text-gray-900 mb-2 dark:text-black">1st Semester</h2>
                     <button class="bg-green-500 tracking-wide open-sans text-black py-2 px-4 rounded-full download-btn"
@@ -54,7 +54,7 @@
             </div>
 
             <!-- Semester Card 2 -->
-            <div class="bg-white cursor-pointer dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg semester-card">
+            <div class="backdrop-blur-15 cursor-pointer dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg semester-card">
                 <div class="p-4  pt-6  flex flex-col justify-center items-center">
                     <h2 class="text-lg font-semibold open-sans-one text-gray-900 mb-2 dark:text-black">2nd Semester</h2>
                     <button class="bg-green-500 tracking-wide open-sans text-black py-2 px-4 rounded-full download-btn"
@@ -65,44 +65,44 @@
             <!-- Semester Card 3 (Add more Semester Cards as needed) -->
 
             <!-- Semester Card 4 -->
-            <div class="bg-white cursor-pointer dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg semester-card">
+            <div class="backdrop-blur-15 cursor-pointer dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg semester-card">
                 <div class="p-4  pt-6 flex flex-col justify-center items-center">
                     <h2 class="text-lg font-semibold open-sans-one text-gray-900 mb-2 dark:text-black">3th Semester</h2>
                     <button class="bg-green-500 tracking-wide open-sans text-black py-2 px-4 rounded-full download-btn"
                         onclick="showCoursesForSemester(3)">Show Courses</button>
                 </div>
             </div>
-            <div class="bg-white cursor-pointer dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg semester-card">
+            <div class="backdrop-blur-15 cursor-pointer dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg semester-card">
                 <div class="p-4  pt-6  flex flex-col justify-center items-center">
                     <h2 class="text-lg font-semibold open-sans-one text-gray-900 mb-2 dark:text-black">4th Semester</h2>
                     <button class="bg-green-500 tracking-wide open-sans text-black py-2 px-4 rounded-full download-btn"
                         onclick="showCoursesForSemester(4)">Show Courses</button>
                 </div>
             </div>
-            <div class="bg-white cursor-pointer dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg semester-card">
+            <div class="backdrop-blur-15 cursor-pointer dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg semester-card">
                 <div class="p-4  pt-6  flex flex-col justify-center items-center">
                     <h2 class="text-lg font-semibold open-sans-one text-gray-900 mb-2 dark:text-black">5th Semester</h2>
                     <button class="bg-green-500 tracking-wide open-sans text-black py-2 px-4 rounded-full download-btn"
                         onclick="showCoursesForSemester(5)">Show Courses</button>
                 </div>
             </div>
-            <div class="bg-white cursor-pointer dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg semester-card">
+            <div class="backdrop-blur-15 cursor-pointer dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg semester-card">
                 <div class="p-4  pt-6  flex flex-col justify-center items-center">
                     <h2 class="text-lg font-semibold open-sans-one text-gray-900 mb-2 dark:text-black">6th Semester</h2>
                     <button class="bg-green-500 tracking-wide open-sans text-black py-2 px-4 rounded-full download-btn"
                         onclick="showCoursesForSemester(6)">Show Courses</button>
                 </div>
             </div>
-            <div class="bg-white cursor-pointer dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg semester-card">
+            <div class="backdrop-blur-15 cursor-pointer dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg semester-card">
                 <div class="p-4  pt-6  flex flex-col justify-center items-center">
                     <h2 class="text-lg font-semibold open-sans-one text-gray-900 mb-2 dark:text-black">7th Semester</h2>
                     <button class="bg-green-500 tracking-wide open-sans text-black py-2 px-4 rounded-full download-btn"
                         onclick="showCoursesForSemester(7)">Show Courses</button>
                 </div>
             </div>
-            <div class="bg-white cursor-pointer dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg semester-card">
+            <div class="backdrop-blur-15 cursor-pointer dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg semester-card">
                 <div class="p-4  pt-6  flex flex-col justify-center items-center">
-                    <h2 class="text-lg font-semibold open-sans-one text-gray-900 mb-2 dark:text-black">8th Semester</h2>
+                    <h2 class="text-lg font-semibold open-sans-one text-gray-900 mb-2 dark:text-white">8th Semester</h2>
                     <button class="bg-green-500 tracking-wide open-sans text-black py-2 px-4 rounded-full download-btn"
                         onclick="showCoursesForSemester(8)">Show Courses</button>
                 </div>
@@ -114,13 +114,7 @@
             <!-- ... Courses will be dynamically added here based on the selected semester -->
         </div>
 
-        <!-- Comment Section (Initially Hidden) -->
-<div id="commentSection" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 md:gap-8 hidden mt-8">
-    <h2 class="text-2xl font-semibold col-span-full mb-4">Comments</h2>
-    <div id="commentsList" class="col-span-full mb-4"></div>
-    <textarea id="commentInput" class="w-full p-2 mb-4 col-span-full" placeholder="Leave a comment..."></textarea>
-    <button onclick="submitComment()" class="bg-green-500 text-white py-2 px-4 rounded-full col-span-full">Submit Comment</button>
-</div>
+
         <!-- Back Button (Hidden by default) -->
         <button id="backButton" class="button-toggle tracking-widest open-sans cursor-pointer hidden" onclick="goBack()">
             Back

@@ -10,6 +10,8 @@ body{
     font-weight: bolder;
    }
 
+   
+
    .open-sans {
        font-weight: 400;
        font-family: 'Open Sans', sans-serif;
@@ -83,10 +85,24 @@ body{
        transition: filter 0.3s ease;
    }
 
-   .semester-card:hover {
-       background-color: #f1f1f1;
-   }
+   body.dark .semester-card h2 {
+    color: white;
+}
 
+.backdrop-blur-15.dark .semester-card h2 {
+    color: white;
+}
+
+.semester-card:hover {
+    background-color: whitesmoke;
+}
+
+
+body.dark .semester-card:hover {
+    background-color: #212121;
+    color: white;
+}
+ 
    .semester-card.active {
        background-color: black;
        color: white;

@@ -22,6 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
         darkModeIcon.classList.toggle('hidden', isDarkMode);
     });
 
+    
+
     // Function to show the Courses for a specific semester
     window.showCoursesForSemester = (semesterNumber, isBooks) => {
         fadeOut(semesterCardsSection, () => {
@@ -60,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const card = document.createElement('div');
                 card.classList.add('course-card', 'fade-in'); // Add appropriate class for styling
                 card.innerHTML = `
-                    <div class="bg-white cursor-pointer dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg">
+                    <div class="backdrop-blur-15 cursor-pointer dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg">
                         <div class="p-4 flex flex-col justify-center items-center">
                             <img src="${course.image}" alt="Course Image" class="mb-2 w-full h-40 object-cover rounded">
                             <h2 class="text-lg font-semibold open-sans-one text-gray-900 mb-2 dark:text-black">${course.name}</h2>
