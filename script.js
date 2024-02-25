@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Mock data for courses (replace this with your actual data)
             const booksData = {
                 1: [
-                    { name: 'Entrepreneurship', author: 'Bruce R Barringer', edition: '4th Edition', image: '/entrpreneur.png', link: 'https://drive.google.com/file/d/1xRwRXf9tGtNuMXdur7JyCC5pPxTcW7fc/view?usp=sharing' },
+                    { name: 'Entrepreneurship', author: 'Bruce R Barringer', edition: '4th Edition', image: './entrpreneur.png', link: 'https://drive.google.com/file/d/1xRwRXf9tGtNuMXdur7JyCC5pPxTcW7fc/view?usp=sharing' },
                     // Add more books as needed
                 ],
                 2: [
@@ -63,14 +63,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 card.classList.add('course-card', 'fade-in'); // Add appropriate class for styling
                 card.innerHTML = `
                     <div class="backdrop-blur-15 cursor-pointer dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg">
-                        <div class="p-4 flex flex-col justify-center items-center">
+                        <div class="p-4 flex flex-col hover:text-black justify-center items-center">
                             <img src="${course.image}" alt="Course Image" class="mb-2 w-full h-40 object-cover rounded">
-                            <h2 class="text-lg font-semibold open-sans-one text-gray-900 mb-2 dark:text-black">${course.name}</h2>
+                            <h2 class="text-lg font-semibold open-sans-one  mb-2  style="color: ${isDarkMode ? 'white' : 'text-gray-900'}" ">${course.name}</h2>
                             ${isBooks ? 
-                                `<p class="text-md open-sans text-gray-700 mb-2 dark:text-gray-300">Author: ${course.author}</p>
-                                <p class="text-md open-sans text-gray-700 mb-2 dark:text-gray-300">Edition: ${course.edition}</p>` :
-                                `<p class="text-md open-sans text-gray-700 mb-2 dark:text-gray-300">Source: ${course.source}</p>
-                                <p class="text-md open-sans text-gray-700 mb-2 dark:text-gray-300">Topics: ${course.topics}</p>`
+                                `<p class="text-md open-sans mb-2 style="color: ${isDarkMode ? 'white' : 'text-gray-700'} ">Author: ${course.author}</p>
+                                <p class="text-md open-sans mb-2 style="color: ${isDarkMode ? 'white' : 'text-gray-700'}">Edition: ${course.edition}</p>` :
+                                `<p class="text-md open-sans mb-2 style="color: ${isDarkMode ? 'white' : 'text-gray-700'}" >Source: ${course.source}</p>
+                                <p class="text-md open-sans mb-2 style="color: ${isDarkMode ? 'white' : 'text-gray-700'}" >Topics: ${course.topics}</p>`
                             }
                             <button class="bg-green-500 open-sans text-black py-2 px-4 rounded-full download-btn"
                                 onclick="showDownloadLink('${course.link}')">Download</button>
